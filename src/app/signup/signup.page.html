@@ -6,4 +6,38 @@
 
 <ion-content>
 
+  <form [formGroup]="signupForm">
+    <!--Email-->
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" placeholder="something@gmail.com"></ion-input>
+    </ion-item>
+
+    <!--Name-->
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" placeholder="Hugo Sevilla"></ion-input>
+    </ion-item>
+
+    <!--Username-->
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input formControlName="username" placeholder="HugoElcabezas"></ion-input>
+    </ion-item>
+
+
+    <!--Password-->
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+
+    <!--ConfirmPassword-->
+    <ion-item>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input formControlName="confirmPassword" type="password"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()">Sign Up</ion-button>
+  </form>
 </ion-content>
