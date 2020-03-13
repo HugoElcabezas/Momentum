@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>post-detail</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+
+    <!-- Avatar-->
+    
+    <ion-row>
+      <ion-col size=2>
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      </ion-col>
+
+      <!-- Nombre -->
+      <ion-col size="10">HugoS</ion-col>
+    </ion-row>
+
+    <!-- Imagen -->
+    <ion-row>
+      <ion-col size="12">
+        <img src="https://wallpaperaccess.com/full/1470705.jpg">
+      </ion-col>
+    </ion-row>
+
+    <!-- Likes -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-icon name="heart-outline"></ion-icon>
+        {{1500 | number}} likes
+      </ion-col>
+    </ion-row>
+
+    <!-- Descripción -->
+    <ion-row>
+      <ion-col size="12">
+        Esta es una imagen muy hermosa por siempre la verdad.
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
