@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,7 @@ export class SignupPage implements OnInit {
 
   signupForm: FormGroup;
 
-  constructor() { }
+  constructor(private afAuth: AngularFireAuth) { }
 
   ngOnInit() {
     this.initForm();
@@ -28,7 +29,22 @@ export class SignupPage implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.signupForm.value);
+    if (this.signupForm.valid) {
+      console.log(this.signupForm.value);
+
+      const email = this.signupForm.controls.email.value;
+      const password = this.signupForm.controls.password.value;
+
+      this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((Credentials) => {
+        console.log(Credentials);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    } else {
+      console.log('error');
+    }
   }
 
 }

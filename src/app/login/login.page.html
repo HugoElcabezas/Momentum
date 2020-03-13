@@ -6,4 +6,22 @@
 
 <ion-content>
 
+  <form [formGroup]="loginForm">
+    <!--Email-->
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" placeholder="something@gmail.com"></ion-input>
+    </ion-item>
+    
+    <!--Password-->
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()">Login</ion-button>
+  </form>
+
+  <ion-button color="primary" expand="block" fill="solid" (click)="logOut()">Logout</ion-button>
+
 </ion-content>
