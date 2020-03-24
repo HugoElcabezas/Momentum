@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ export class LoginPage implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private afAuth: AngularFireAuth,
+              private navCtrl: NavController) { }
 
   ngOnInit() {
     this.initForm();
@@ -34,7 +36,7 @@ export class LoginPage implements OnInit {
 
       this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((Credentials) => {
-        console.log(Credentials);
+        this.navCtrl.navigateForward(['tabs/feed']);
       })
       .catch((error) => {
         console.log(error);
@@ -42,6 +44,10 @@ export class LoginPage implements OnInit {
     } else {
       console.log('error');
     }
+  }
+
+  goToSignup() {
+    this.navCtrl.navigateForward(['signup']);
   }
 
   logOut() {
