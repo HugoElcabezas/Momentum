@@ -6,7 +6,7 @@ import { TabsPage } from './tabs.page';
 const routes: Routes = [
 
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       // feed
@@ -65,14 +65,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'tabs/feed',
+        redirectTo: '/tabs/feed',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: 'tabs/feed',
+    redirectTo: '/tabs/feed',
     pathMatch: 'full'
   },
 ];
